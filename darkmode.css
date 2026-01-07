@@ -1,0 +1,329 @@
+/* 백준 온라인 저지 다크모드 스타일 */
+
+/* 기본 배경 및 텍스트 색상 */
+body {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
+}
+
+/* 헤더 */
+#navbar, .navbar, nav {
+  background-color: #252526 !important;
+  border-color: #3e3e42 !important;
+}
+
+#navbar a, .navbar a, nav a {
+  color: #d4d4d4 !important;
+}
+
+#navbar a:hover, .navbar a:hover, nav a:hover {
+  color: #ffffff !important;
+  background-color: #37373d !important;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown-menu {
+  background-color: #252526 !important;
+  border-color: #3e3e42 !important;
+}
+
+.dropdown-menu > li > a {
+  color: #d4d4d4 !important;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #37373d !important;
+  color: #ffffff !important;
+}
+
+/* 메인 컨테이너 */
+.container, .container-fluid {
+  background-color: #1e1e1e !important;
+}
+
+/* 패널 및 카드 */
+.panel, .card {
+  background-color: #252526 !important;
+  border-color: #3e3e42 !important;
+  color: #d4d4d4 !important;
+}
+
+.panel-heading, .card-header {
+  background-color: #2d2d30 !important;
+  border-color: #3e3e42 !important;
+  color: #d4d4d4 !important;
+}
+
+.panel-body, .card-body {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+}
+
+.panel-footer, .card-footer {
+  background-color: #2d2d30 !important;
+  border-color: #3e3e42 !important;
+}
+
+/* 테이블 */
+table {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+}
+
+table thead {
+  background-color: #2d2d30 !important;
+  color: #d4d4d4 !important;
+}
+
+table tbody tr {
+  background-color: #252526 !important;
+  border-color: #3e3e42 !important;
+}
+
+table tbody tr:hover {
+  background-color: #2d2d30 !important;
+}
+
+th, td {
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+/* 입력 필드 */
+input[type="text"], 
+input[type="password"], 
+input[type="email"],
+input[type="number"],
+textarea, 
+select {
+  background-color: #3c3c3c !important;
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  background-color: #3c3c3c !important;
+  color: #d4d4d4 !important;
+  border-color: #007acc !important;
+}
+
+/* 버튼 */
+.btn-default {
+  background-color: #3c3c3c !important;
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+.btn-default:hover {
+  background-color: #505050 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary {
+  background-color: #0e639c !important;
+  border-color: #1177bb !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover {
+  background-color: #1177bb !important;
+}
+
+/* 링크 */
+a {
+  color: #569cd6 !important;
+}
+
+a:hover {
+  color: #4fc3f7 !important;
+}
+
+/* 코드 블록 */
+pre, code {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+.code-block, .problem-text pre {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
+}
+
+/* 문제 내용 */
+#problem_description, 
+#problem_input, 
+#problem_output,
+.problem-text {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+}
+
+/* 샘플 데이터 */
+.sampledata {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+/* 페이지네이션 */
+.pagination > li > a,
+.pagination > li > span {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+.pagination > li > a:hover {
+  background-color: #37373d !important;
+  color: #ffffff !important;
+}
+
+.pagination > .active > a {
+  background-color: #0e639c !important;
+  border-color: #1177bb !important;
+}
+
+/* Alert 박스 */
+.alert {
+  background-color: #2d2d30 !important;
+  border-color: #3e3e42 !important;
+  color: #d4d4d4 !important;
+}
+
+.alert-success {
+  background-color: #1e3a20 !important;
+  border-color: #2e5c31 !important;
+  color: #a5d6a7 !important;
+}
+
+.alert-info {
+  background-color: #1e2a3a !important;
+  border-color: #2e4a6a !important;
+  color: #81d4fa !important;
+}
+
+.alert-warning {
+  background-color: #3a2e1e !important;
+  border-color: #6a4e2e !important;
+  color: #ffcc80 !important;
+}
+
+.alert-danger {
+  background-color: #3a1e1e !important;
+  border-color: #6a2e2e !important;
+  color: #ef9a9a !important;
+}
+
+/* 레이블 및 배지 */
+.label, .badge {
+  background-color: #3c3c3c !important;
+  color: #d4d4d4 !important;
+}
+
+/* Well */
+.well {
+  background-color: #252526 !important;
+  border-color: #3e3e42 !important;
+  color: #d4d4d4 !important;
+}
+
+/* 폼 그룹 */
+.form-control {
+  background-color: #3c3c3c !important;
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+/* 모달 */
+.modal-content {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+.modal-header {
+  background-color: #2d2d30 !important;
+  border-color: #3e3e42 !important;
+}
+
+.modal-footer {
+  background-color: #2d2d30 !important;
+  border-color: #3e3e42 !important;
+}
+
+/* 제출 현황 */
+.result-text {
+  color: #d4d4d4 !important;
+}
+
+/* 사이드바 */
+.sidebar, .side-menu {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+}
+
+/* 푸터 */
+footer {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+  border-color: #3e3e42 !important;
+}
+
+/* 로그인 폼 */
+.login-form {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4e4e4e;
+}
+
+/* 코드 에디터 (ACE Editor) */
+.ace_editor {
+  background-color: #1e1e1e !important;
+}
+
+.ace_gutter {
+  background-color: #252526 !important;
+  color: #858585 !important;
+}
+
+.ace_gutter-active-line {
+  background-color: #2d2d30 !important;
+}
+
+/* 문제 난이도 태그 */
+.solvedac-tier {
+  border-color: #3e3e42 !important;
+}
+
+/* HR 구분선 */
+hr {
+  border-color: #3e3e42 !important;
+}
+
+/* 이미지 밝기 조정 */
+img {
+  opacity: 0.85;
+}
+
+img:hover {
+  opacity: 1;
+}

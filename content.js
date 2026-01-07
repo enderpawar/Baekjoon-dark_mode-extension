@@ -44,6 +44,29 @@ div, section, article, aside, header, main, footer, nav {
   background: #0d1117 !important;
 }
 
+/* ===== 광고 차단 ===== */
+/* Google AdSense 및 기타 광고 숨김 */
+ins.adsbygoogle,
+.adsbygoogle,
+iframe[src*="googlesyndication"],
+iframe[src*="doubleclick"],
+div[id*="google_ads"],
+div[class*="google-ad"],
+div[id*="ad-"],
+div[class*="advertisement"],
+div[class*="ad-container"],
+div[class*="ad-wrapper"],
+[id*="adunit"],
+[class*="adunit"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
 /* ===== 네비게이션 바 ===== */
 #navbar, .navbar, nav, .navbar-default {
   background-color: #161b22 !important;
@@ -709,6 +732,9 @@ function applyDarkMode() {
   
   // 추가 인라인 스타일 강제 적용
   forceTableStyles();
+  
+  // 광고 차단
+  blockAds();
 }
 
 // 테이블 스타일 강제 적용
@@ -737,12 +763,76 @@ function forceTableStyles() {
   });
 }
 
+// 광고 차단 함수
+function blockAds() {
+  const removeAds = () => {
+    // Google AdSense 및 광고 요소 제거
+    const adSelectors = [
+      'ins.adsbygoogle',
+      '.adsbygoogle',
+      'iframe[src*="googlesyndication"]',
+      'iframe[src*="doubleclick"]',
+      'div[id*="google_ads"]',
+      'div[class*="google-ad"]',
+      'div[id*="ad-"]',
+      'div[class*="advertisement"]',
+      'div[class*="ad-container"]',
+      'div[class*="ad-wrapper"]',
+      '[id*="adunit"]',
+      '[class*="adunit"]',
+      'iframe[id*="google"]',
+      'iframe[name*="google"]'
+    ];
+    
+    adSelectors.forEach(selector => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        // 부모 요소도 함께 제거 (광고 컨테이너)
+        const parent = el.parentElement;
+        if (parent && parent.children.length === 1) {
+          parent.remove();
+        } else {
+          el.remove();
+        }
+      });
+    });
+  };
+  
+  // 즉시 실행
+  removeAds();
+  
+  // 페이지 로드 후 다시 실행
+  setTimeout(removeAds, 500);
+  setTimeout(removeAds, 1000);
+  setTimeout(removeAds, 2000);
+  
+  // MutationObserver로 동적 광고 감시
+  const adObserver = new MutationObserver(removeAds);
+  adObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+}
+
 // 다크모드 스타일 제거 함수
 function removeDarkMode() {
   const style = document.getElementById('boj-darkmode-style');
   if (style) {
     style.remove();
   }
+  // body 끝의 추가 스타일도 제거
+  const extraStyles = document.querySelectorAll('body > style');
+  extraStyles.forEach(s => {
+    if (s.textContent.includes('.table-striped')) {
+      s.remove();
+    }
+  });
+}
+
+// 광고 차단 해제 함수
+function unblockAds() {
+  // 광고 차단을 해제하려면 페이지 새로고침 필요
+  // 실제로는 차단된 요소가 이미 제거되었으므로 새로고침해야 복원됨
 }
 
 // 초기 로드 시 설정 확인

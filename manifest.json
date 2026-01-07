@@ -7,12 +7,12 @@
   "action": {
     "default_popup": "popup.html",
     "default_title": "백준 다크모드",
-    "default_icon": "icon.jpg"
+    "default_icon": "icon.png"
   },
   "icons": {
-    "16": "icon.jpg",
-    "48": "icon.jpg",
-    "128": "icon.jpg"
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   },
   "content_scripts": [
     {

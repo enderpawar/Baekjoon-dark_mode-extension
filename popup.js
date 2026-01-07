@@ -12,7 +12,6 @@ chrome.storage.sync.get(['darkModeEnabled'], function(result) {
 document.getElementById('darkModeToggle').addEventListener('change', function(e) {
   const isEnabled = e.target.checked;
   
-  // 상태 저장
   chrome.storage.sync.set({ darkModeEnabled: isEnabled }, function() {
     updateStatus(isEnabled);
     
@@ -23,7 +22,6 @@ document.getElementById('darkModeToggle').addEventListener('change', function(e)
           action: 'toggleDarkMode', 
           enabled: isEnabled 
         }, function(response) {
-          // 오류 무시 (페이지가 아직 로드되지 않았을 수 있음)
           if (chrome.runtime.lastError) {
             console.log('Content script not ready:', chrome.runtime.lastError.message);
           }

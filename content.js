@@ -68,6 +68,43 @@ div[class*="ad-wrapper"],
 }
 
 /* ===== 네비게이션 바 ===== */
+/* navbar-header는 원래 색상 유지 */
+.navbar-header {
+  background-color: transparent !important;
+  filter: none !important;
+}
+
+.navbar-header img,
+.navbar-header a,
+.navbar-brand {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* 메인 배너 및 슬라이더 텍스트 원래 색상 유지 */
+.tp-caption,
+.tp-caption *,
+.re-title-v1,
+.slider-content,
+.slider-text,
+[class*="tp-"],
+.revolution-slider,
+.rev_slider {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
+/* 배너 이미지 및 배경 유지 */
+.slider,
+.slider img,
+.banner,
+.banner img,
+.jumbotron,
+.jumbotron * {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
 #navbar, .navbar, nav, .navbar-default {
   background-color: #161b22 !important;
   border-color: #30363d !important;
@@ -82,6 +119,28 @@ div[class*="ad-wrapper"],
 #navbar a:hover, .navbar a:hover, nav a:hover, .navbar-nav > li > a:hover {
   color: #58a6ff !important;
   background-color: #21262d !important;
+}
+
+/* Nav Pills (탭 메뉴) */
+.nav-pills > li > a {
+  color: #c9d1d9 !important;
+  background-color: transparent !important;
+  border: 1px solid #30363d !important;
+  transition: all 0.2s ease !important;
+}
+
+.nav-pills > li > a:hover {
+  background-color: #21262d !important;
+  color: #58a6ff !important;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  background: linear-gradient(135deg, #1f6feb 0%, #58a6ff 100%) !important;
+  color: #ffffff !important;
+  border-color: #58a6ff !important;
+  font-weight: 600 !important;
 }
 
 .navbar-brand {
@@ -765,6 +824,9 @@ function forceTableStyles() {
 
 // 광고 차단 함수
 function blockAds() {
+  // 광고 스크립트 차단
+  blockAdScripts();
+  
   const removeAds = () => {
     // Google AdSense 및 광고 요소 제거
     const adSelectors = [
@@ -814,6 +876,46 @@ function blockAds() {
   });
 }
 
+// 광고 스크립트 차단
+function blockAdScripts() {
+  // adsbygoogle 객체 무력화
+  if (window.adsbygoogle) {
+    window.adsbygoogle = [];
+    window.adsbygoogle.push = function() { return; };
+  }
+  
+  // 광고 스크립트 로드 방지
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.tagName === 'SCRIPT') {
+          const src = node.src || '';
+          if (src.includes('googlesyndication') || 
+              src.includes('adsbygoogle') || 
+              src.includes('doubleclick')) {
+            node.remove();
+          }
+        }
+      });
+    });
+  });
+  
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true
+  });
+  
+  // 기존 광고 스크립트 제거
+  document.querySelectorAll('script').forEach(script => {
+    const src = script.src || '';
+    if (src.includes('googlesyndication') || 
+        src.includes('adsbygoogle') || 
+        src.includes('doubleclick')) {
+      script.remove();
+    }
+  });
+}
+
 // 다크모드 스타일 제거 함수
 function removeDarkMode() {
   const style = document.getElementById('boj-darkmode-style');
@@ -842,6 +944,9 @@ chrome.storage.sync.get(['darkModeEnabled'], function(result) {
     applyDarkMode();
   }
 });
+
+// 광고는 항상 차단
+blockAds();
 
 // 메시지 리스너
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {

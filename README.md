@@ -1,6 +1,7 @@
 <div align="center">
 
 # 🌙 백준 다크모드
+<img width="3837" height="1976" alt="image" src="https://github.com/user-attachments/assets/bcd26424-e8bc-4aeb-9cff-c24736f916a1" />
 
 <img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Extension">
 <img src="https://img.shields.io/badge/Version-1.0-brightgreen?style=for-the-badge" alt="Version">

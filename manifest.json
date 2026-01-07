@@ -6,7 +6,13 @@
   "permissions": ["storage", "activeTab"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "백준 다크모드"
+    "default_title": "백준 다크모드",
+    "default_icon": "icon.jpg"
+  },
+  "icons": {
+    "16": "icon.jpg",
+    "48": "icon.jpg",
+    "128": "icon.jpg"
   },
   "content_scripts": [
     {

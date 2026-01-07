@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>백준 다크모드 아이콘 생성기</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 100%);
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+      background: #252526;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+      margin-bottom: 30px;
+      color: #58a6ff;
+    }
+    .icons {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .icon-item {
+      text-align: center;
+    }
+    canvas {
+      border: 2px solid #30363d;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: white;
+    }
+    button {
+      background: linear-gradient(135deg, #1f6feb 0%, #58a6ff 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.4);
+    }
+    .download-all {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 16px;
+    }
+    p {
+      color: #8b949e;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌙 백준 다크모드 아이콘</h1>
+    <p>아래 버튼을 클릭하여 각 아이콘을 다운로드하세요</p>
+    
+    <div class="icons">
+      <div class="icon-item">
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <br>
+        <button onclick="downloadIcon(16)">16x16 다운로드</button>
+      </div>
+      
+      <div class="icon-item">
+        <canvas id="icon48" width="48" height="48"></canvas>
+        <br>
+        <button onclick="downloadIcon(48)">48x48 다운로드</button>
+      </div>
+      
+      <div class="icon-item">
+        <canvas id="icon128" width="128" height="128"></canvas>
+        <br>
+        <button onclick="downloadIcon(128)">128x128 다운로드</button>
+      </div>
+    </div>
+    
+    <button class="download-all" onclick="downloadAll()">🎨 모든 아이콘 다운로드</button>
+    
+    <p>다운로드 후 프로젝트 폴더에 icon16.png, icon48.png, icon128.png로 저장하세요</p>
+  </div>
+
+  <script>
+    // 아이콘 그리기 함수
+    function drawIcon(size) {
+      const canvas = document.getElementById(`icon${size}`);
+      const ctx = canvas.getContext('2d');
+      
+      // 배경 (그라데이션)
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#1f6feb');
+      gradient.addColorStop(1, '#58a6ff');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+      
+      // 달 그리기
+      const centerX = size / 2;
+      const centerY = size / 2;
+      const moonRadius = size * 0.35;
+      
+      // 달 (흰색 원)
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(centerX - size * 0.05, centerY - size * 0.05, moonRadius, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // 달의 음영 (어두운 원으로 반달 효과)
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(centerX + size * 0.1, centerY - size * 0.1, moonRadius * 0.85, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // 별 추가 (작은 크기에서는 생략)
+      if (size >= 48) {
+        ctx.fillStyle = '#ffffff';
+        const starSize = size * 0.08;
+        
+        // 별 1
+        drawStar(ctx, size * 0.75, size * 0.25, starSize);
+        
+        // 별 2
+        drawStar(ctx, size * 0.85, size * 0.45, starSize * 0.7);
+        
+        // 별 3
+        drawStar(ctx, size * 0.2, size * 0.75, starSize * 0.8);
+      }
+    }
+    
+    // 별 그리기 함수
+    function drawStar(ctx, x, y, size) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.beginPath();
+      
+      for (let i = 0; i < 5; i++) {
+        const angle = (i * 4 * Math.PI) / 5 - Math.PI / 2;
+        const x = Math.cos(angle) * size;
+        const y = Math.sin(angle) * size;
+        
+        if (i === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      }
+      
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+    
+    // 아이콘 다운로드 함수
+    function downloadIcon(size) {
+      const canvas = document.getElementById(`icon${size}`);
+      const link = document.createElement('a');
+      link.download = `icon${size}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+    
+    // 모든 아이콘 다운로드
+    function downloadAll() {
+      setTimeout(() => downloadIcon(16), 100);
+      setTimeout(() => downloadIcon(48), 300);
+      setTimeout(() => downloadIcon(128), 500);
+    }
+    
+    // 페이지 로드 시 모든 아이콘 그리기
+    window.onload = () => {
+      drawIcon(16);
+      drawIcon(48);
+      drawIcon(128);
+    };
+  </script>
+</body>
+</html>

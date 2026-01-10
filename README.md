@@ -4,7 +4,7 @@
 <img width="3839" height="2034" alt="image" src="https://github.com/user-attachments/assets/238e7adb-5a42-40a6-812b-2c703a94e761" />
 
 <img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Extension">
-<img src="https://img.shields.io/badge/Version-1.0-brightgreen?style=for-the-badge" alt="Version">
+<img src="https://img.shields.io/badge/Version-1.1-brightgreen?style=for-the-badge" alt="Version">
 <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
 
 **백준 온라인 저지를 더 편안하게, 눈이 편안한 다크모드로 즐기세요!**
@@ -103,6 +103,17 @@ body {
 5. Open a Pull Request
 
 ## 📝 변경 로그
+
+### v1.1 (2026-01-10)
+- 🐛 코드 제출 페이지 에디터 블록 표시 문제 해결
+- 🎨 언어 선택 드롭다운 (Chosen.js) 다크 테마 적용
+- 🔧 MutationObserver 오류 수정 (document.body 존재 확인)
+- ✨ 메인 페이지 항목 구분 개선 (새로운 글, 추가된 문제 등)
+- 🎯 네비게이션 탭 스타일 개선 (테두리 제거, 언더라인 스타일)
+- 🎨 아이콘 색상 조정 (glyphicon 다크 테마 적용)
+- 🔍 검색 페이지 배경색 수정
+- 📖 도움말/재채점 페이지 배경 및 텍스트 색상 개선
+- 🎨 코드 에디터 (CodeMirror) 줄 간격 및 선택 영역 표시 개선
 
 ### v1.0 (2026-01-07)
 - 🎉 초기 릴리스

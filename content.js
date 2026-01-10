@@ -125,13 +125,14 @@ div[class*="ad-wrapper"],
 .nav-pills > li > a {
   color: #c9d1d9 !important;
   background-color: transparent !important;
-  border: 1px solid #30363d !important;
+  border: none !important;
   transition: all 0.2s ease !important;
 }
 
 .nav-pills > li > a:hover {
   background-color: #21262d !important;
   color: #58a6ff !important;
+  border: none !important;
 }
 
 .nav-pills > li.active > a,
@@ -139,7 +140,7 @@ div[class*="ad-wrapper"],
 .nav-pills > li.active > a:focus {
   background: linear-gradient(135deg, #1f6feb 0%, #58a6ff 100%) !important;
   color: #ffffff !important;
-  border-color: #58a6ff !important;
+  border: none !important;
   font-weight: 600 !important;
 }
 
@@ -197,6 +198,73 @@ div[class*="ad-wrapper"],
   background-color: #0d1117 !important;
   border-top: 1px solid #30363d !important;
   color: #8b949e !important;
+}
+
+/* ===== 검색 블록 ===== */
+.search-block,
+.search-block-v2,
+.search-block-v2 .container,
+.search-block-v2 .col-md-6 {
+  background-color: #0d1117 !important;
+  background: #0d1117 !important;
+}
+
+.search-block .container,
+.search-block-v2 .container {
+  background-color: #0d1117 !important;
+}
+
+.search-block h2,
+.search-block-v2 h2 {
+  color: #c9d1d9 !important;
+}
+
+.search-block-v2 .input-group {
+  background-color: transparent !important;
+}
+
+.search-block-v2 .btn-u {
+  background-color: #1f6feb !important;
+  border-color: #1f6feb !important;
+  color: #ffffff !important;
+}
+
+/* ===== Breadcrumbs ===== */
+.breadcrumbs,
+.breadcrumb {
+  background-color: #0d1117 !important;
+  background: #0d1117 !important;
+}
+
+.breadcrumbs .container,
+.breadcrumbs h1 {
+  background-color: transparent !important;
+  color: #c9d1d9 !important;
+}
+
+/* ===== 도움말/기타 페이지 ===== */
+.g-bg-gray-light-v8,
+.g-bg-gray-light-v5,
+[class*="g-bg-gray-light"],
+[class*="g-bg-white"] {
+  background-color: #161b22 !important;
+  background: #161b22 !important;
+}
+
+.g-color-gray-dark-v6,
+.g-color-gray-dark-v5,
+[class*="g-color-gray-dark"] {
+  color: #c9d1d9 !important;
+}
+
+.g-color-black,
+[class*="g-color-black"] {
+  color: #c9d1d9 !important;
+}
+
+.g-pa-20,
+[class*="g-pa-"] {
+  background-color: transparent !important;
 }
 
 /* ===== 테이블 ===== */
@@ -321,7 +389,6 @@ input[type="email"],
 input[type="number"],
 input[type="search"],
 textarea, 
-select,
 .form-control {
   background-color: #0d1117 !important;
   color: #c9d1d9 !important;
@@ -329,11 +396,101 @@ select,
   transition: all 0.2s ease !important;
 }
 
+/* Select 박스 스타일 */
+select,
+select[name="language"],
+.form-control.form-control-sm,
+.language-select {
+  background-color: #0d1117 !important;
+  background: #0d1117 !important;
+  background-image: none !important;
+  color: #c9d1d9 !important;
+  border: 1px solid #30363d !important;
+  transition: all 0.2s ease !important;
+  -webkit-appearance: menulist !important;
+  -moz-appearance: menulist !important;
+  appearance: menulist !important;
+}
+
+/* Chosen.js 커스텀 select 박스 */
+.chosen-container-single .chosen-single,
+.chosen-container .chosen-single {
+  background: #0d1117 !important;
+  background-color: #0d1117 !important;
+  background-image: none !important;
+  border: 1px solid #30363d !important;
+  color: #c9d1d9 !important;
+  box-shadow: none !important;
+}
+
+.chosen-container-single .chosen-single span,
+.chosen-container .chosen-single span {
+  color: #c9d1d9 !important;
+}
+
+.chosen-container-single .chosen-single div b,
+.chosen-container .chosen-single div b {
+  background: none !important;
+}
+
+.chosen-drop {
+  background-color: #161b22 !important;
+  border: 1px solid #30363d !important;
+}
+
+.chosen-results {
+  background-color: #161b22 !important;
+  color: #c9d1d9 !important;
+}
+
+.chosen-results li {
+  color: #c9d1d9 !important;
+}
+
+.chosen-results li.highlighted {
+  background-color: #1f6feb !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+.chosen-results li.active-result:hover {
+  background-color: #1f6feb !important;
+}
+
+.chosen-search input[type="text"] {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+  border: 1px solid #30363d !important;
+}
+
+/* 드롭다운 옵션 */
+select option,
+.form-control option {
+  background-color: #161b22 !important;
+  background: #161b22 !important;
+  color: #c9d1d9 !important;
+}
+
+select option:hover,
+select option:focus,
+select option:checked {
+  background-color: #1f6feb !important;
+  color: #ffffff !important;
+}
+
 input:focus, 
 textarea:focus, 
-select:focus,
 .form-control:focus {
   background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+  border-color: #58a6ff !important;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1) !important;
+  outline: none !important;
+}
+
+select:focus {
+  background-color: #0d1117 !important;
+  background: #0d1117 !important;
   color: #c9d1d9 !important;
   border-color: #58a6ff !important;
   box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1) !important;
@@ -416,6 +573,133 @@ pre {
 
 code {
   padding: 2px 6px !important;
+}
+
+/* ===== 코드 제출 페이지 textarea ===== */
+form textarea,
+textarea#source,
+textarea[name="source"],
+#submit_form textarea {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 10px !important;
+}
+
+form textarea:focus,
+textarea#source:focus,
+textarea[name="source"]:focus,
+#submit_form textarea:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* CodeMirror 에디터 스타일 */
+.CodeMirror {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+  border: none !important;
+  line-height: inherit !important;
+}
+
+.CodeMirror-scroll {
+  background-color: transparent !important;
+}
+
+.CodeMirror-lines {
+  background-color: transparent !important;
+  padding: 4px 0 !important;
+}
+
+.CodeMirror-line,
+.CodeMirror-line-like {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: inherit !important;
+  -webkit-font-variant-ligatures: contextual !important;
+  font-variant-ligatures: contextual !important;
+}
+
+.CodeMirror pre {
+  line-height: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* 선택 영역 스타일 */
+.CodeMirror-selected,
+.CodeMirror-focused .CodeMirror-selected {
+  background-color: #264f78 !important;
+}
+
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+  background-color: #264f78 !important;
+}
+
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line > span::-moz-selection,
+.CodeMirror-line > span > span::-moz-selection {
+  background-color: #264f78 !important;
+}
+
+.CodeMirror-gutters {
+  background-color: #0d1117 !important;
+  border-right: 1px solid #21262d !important;
+}
+
+.CodeMirror-linenumber {
+  color: #6e7681 !important;
+}
+
+.CodeMirror-cursor {
+  border-left: 1px solid #c9d1d9 !important;
+}
+
+/* ACE Editor 스타일 */
+.ace_editor {
+  background-color: #0d1117 !important;
+}
+
+.ace_scroller {
+  background-color: transparent !important;
+}
+
+.ace_content {
+  background-color: transparent !important;
+}
+
+.ace_line {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ace_gutter {
+  background-color: #0d1117 !important;
+  color: #6e7681 !important;
+}
+
+.ace_gutter-layer {
+  background-color: transparent !important;
+}
+
+.ace_text-layer {
+  color: #c9d1d9 !important;
+}
+
+.ace_cursor {
+  color: #c9d1d9 !important;
+  border-left: 2px solid #c9d1d9 !important;
 }
 
 /* ===== 문제 내용 ===== */
@@ -668,10 +952,73 @@ img:hover {
   background-color: #161b22 !important;
   border: 1px solid #30363d !important;
   color: #c9d1d9 !important;
+  margin-bottom: 4px !important;
+  border-radius: 6px !important;
 }
 
 .list-group-item:hover {
   background-color: #21262d !important;
+}
+
+/* 메인 페이지 항목 구분 */
+.panel-body > div,
+.panel-body > p,
+.panel-body > ul > li,
+.table > tbody > tr,
+.media {
+  background-color: #161b22 !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  margin-bottom: 8px !important;
+  border: 1px solid #30363d !important;
+}
+
+.table > tbody > tr:hover,
+.media:hover {
+  background-color: #21262d !important;
+}
+
+/* 새로운 글, 추가된 문제 등 항목 구분 */
+.blog-twitter-inner,
+.blog-post-container,
+.problem-list-item {
+  background-color: #161b22 !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  margin-bottom: 8px !important;
+  border: 1px solid #30363d !important;
+  display: block !important;
+}
+
+/* 가상 요소 삼각형 제거 */
+.blog-twitter-inner:before,
+.blog-twitter-inner:after {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+}
+
+.blog-twitter-inner:hover,
+.blog-post-container:hover,
+.problem-list-item:hover {
+  background-color: #21262d !important;
+}
+
+/* 아이콘 색상 조정 */
+.icon-twitter,
+.glyphicon,
+.glyphicon-thumbs-up,
+.glyphicon-comment,
+i[class*="icon-"],
+i[class*="glyphicon"],
+span[class*="glyphicon"] {
+  color: #8b949e !important;
+  opacity: 0.8 !important;
+}
+
+.icon-twitter:before,
+.glyphicon:before {
+  color: #8b949e !important;
 }
 
 /* ===== 프로그레스 바 ===== */
@@ -692,19 +1039,23 @@ img:hover {
 
 .nav-tabs > li > a {
   color: #8b949e !important;
-  border: 1px solid transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
   transition: all 0.2s ease !important;
 }
 
 .nav-tabs > li > a:hover {
   background-color: #21262d !important;
-  border-color: #30363d !important;
+  border: none !important;
   color: #c9d1d9 !important;
 }
 
-.nav-tabs > li.active > a {
-  background-color: #161b22 !important;
-  border-color: #30363d #30363d transparent !important;
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid #58a6ff !important;
   color: #58a6ff !important;
 }
 
@@ -804,6 +1155,53 @@ function forceTableStyles() {
       cell.style.setProperty('background-color', 'transparent', 'important');
       cell.style.setProperty('background', 'transparent', 'important');
     });
+    
+    // Select 박스 스타일 강제 적용
+    const selects = document.querySelectorAll('select');
+    selects.forEach(select => {
+      select.style.setProperty('background-color', '#0d1117', 'important');
+      select.style.setProperty('background', '#0d1117', 'important');
+      select.style.setProperty('color', '#c9d1d9', 'important');
+      select.style.setProperty('border', '1px solid #30363d', 'important');
+    });
+    
+    // Chosen.js select 박스 스타일 강제 적용
+    const chosenSingles = document.querySelectorAll('.chosen-container-single .chosen-single, .chosen-container .chosen-single');
+    chosenSingles.forEach(chosen => {
+      chosen.style.setProperty('background-color', '#0d1117', 'important');
+      chosen.style.setProperty('background', '#0d1117', 'important');
+      chosen.style.setProperty('background-image', 'none', 'important');
+      chosen.style.setProperty('border', '1px solid #30363d', 'important');
+      chosen.style.setProperty('color', '#c9d1d9', 'important');
+    });
+    
+    const chosenSpans = document.querySelectorAll('.chosen-container-single .chosen-single span, .chosen-container .chosen-single span');
+    chosenSpans.forEach(span => {
+      span.style.setProperty('color', '#c9d1d9', 'important');
+    });
+    
+    const chosenDrops = document.querySelectorAll('.chosen-drop');
+    chosenDrops.forEach(drop => {
+      drop.style.setProperty('background-color', '#161b22', 'important');
+      drop.style.setProperty('border', '1px solid #30363d', 'important');
+    });
+    
+    const chosenResults = document.querySelectorAll('.chosen-results');
+    chosenResults.forEach(results => {
+      results.style.setProperty('background-color', '#161b22', 'important');
+    });
+    
+    const chosenResultItems = document.querySelectorAll('.chosen-results li');
+    chosenResultItems.forEach(item => {
+      item.style.setProperty('color', '#c9d1d9', 'important');
+    });
+    
+    // Select option 스타일 강제 적용
+    const options = document.querySelectorAll('select option');
+    options.forEach(option => {
+      option.style.setProperty('background-color', '#161b22', 'important');
+      option.style.setProperty('color', '#c9d1d9', 'important');
+    });
   };
   
   // 즉시 실행
@@ -815,11 +1213,13 @@ function forceTableStyles() {
   setTimeout(applyStyles, 1000);
   
   // MutationObserver로 DOM 변경 감시
-  const observer = new MutationObserver(applyStyles);
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
+  if (document.body) {
+    const observer = new MutationObserver(applyStyles);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
 }
 
 // 광고 차단 함수
@@ -869,11 +1269,13 @@ function blockAds() {
   setTimeout(removeAds, 2000);
   
   // MutationObserver로 동적 광고 감시
-  const adObserver = new MutationObserver(removeAds);
-  adObserver.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
+  if (document.body) {
+    const adObserver = new MutationObserver(removeAds);
+    adObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
 }
 
 // 광고 스크립트 차단

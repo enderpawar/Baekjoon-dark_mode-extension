@@ -1,15 +1,15 @@
 <div align="center">
 
-# 🌙 백준 다크모드
+# 🌙 [백준 다크모드](https://chromewebstore.google.com/detail/%EB%B0%B1%EC%A4%80-%EB%8B%A4%ED%81%AC%EB%AA%A8%EB%93%9C/emmoibbdoiakoggcmalbbhaejpfmmpce?authuser=0&hl=ko)
 <img width="3839" height="2034" alt="image" src="https://github.com/user-attachments/assets/238e7adb-5a42-40a6-812b-2c703a94e761" />
 
 <img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Extension">
 <img src="https://img.shields.io/badge/Version-1.1-brightgreen?style=for-the-badge" alt="Version">
 <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
 
-**백준 온라인 저지를 더 편안하게, 눈이 편안한 다크모드로 즐기세요!**
+**백준 온라인 저지를 더 편안하게, 눈이 편안한 다크모드로 즐기세요!** 
 
-[✨ 기능](#-주요-기능) • [📦 설치](#-설치-방법) • [🎨 커스터마이징](#-커스터마이징) • [📄 라이선스](#-라이선스)
+[✨ 기능](#-주요-기능) • [📦 설치](#-설치-방법) • [🎨 커스터마이징](#-커스터마이징) • [📄 라이선스](#-라이선스)  [🚩 다운로드](https://chromewebstore.google.com/detail/%EB%B0%B1%EC%A4%80-%EB%8B%A4%ED%81%AC%EB%AA%A8%EB%93%9C/emmoibbdoiakoggcmalbbhaejpfmmpce?authuser=0&hl=ko)
 
 </div>
 
